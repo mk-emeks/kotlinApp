@@ -2,6 +2,7 @@ package teolenguajefiuba.kotlinapp
 
 import android.os.AsyncTask
 import android.widget.TextView
+import org.json.JSONObject
 import java.io.BufferedInputStream
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -15,7 +16,7 @@ class GetPlayersTask(textView: TextView) : AsyncTask<Void, Void, String>() {
     override fun doInBackground(vararg params: Void?): String? {
         //val url = URL("https://raw.githubusercontent.com/irontec/android-kotlin-samples/master/common-data/bilbao.json")
         // val url = URL("https://10.0.2.2:8080")
-        val url = URL("https://192.168.1.2:8080")
+        val url = URL("http://192.168.1.2:8080/")
         val httpClient = url.openConnection() as HttpURLConnection
         if(httpClient.getResponseCode() == HttpURLConnection.HTTP_OK){
             try {
